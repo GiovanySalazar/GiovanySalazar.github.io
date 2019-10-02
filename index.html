@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Home</title>
+
+  </head>
+  <body>
+  
+ <style>
+
+    .navbar{
+      list-style: none;
+      background-color: black;
+      overflow: hidden;
+      padding: 0;
+    }
+    
+    .navbar a, .dropdown div{
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      padding: 16px;
+      display: inline-block;
+    }
+    .navbar li{
+      float: left;
+    }
+
+    .navbar li:hover{
+      background-color: blue;
+    }
+
+    .dropdown-content{
+      list-style: none;
+      padding: 0;
+      display: none;
+    }
+
+    .dropdown-content li{
+      float:none;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display: block;
+    }
+
+ </style>
+
+    
+      <a herf="index.html"><div>Home</div></a>
+      <a herf="resume.html"><div>Resume</div></a>
+      <a herf="about me.html"><div>About Me</div></a>
+      <ul class="navbar">
+      <li class = "dropdown">
+        <div>Projects</div>
+        <ul class="dropdown-content">
+          <li><a href="project1.html">Project 1</a></li>
+          <li><a href="project2.html">Project 2</a></li>
+          <li><a href="project3.html">Project 3</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </body>
+</html>
