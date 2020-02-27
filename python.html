@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Python Project</title>
-        <style>
+     <title>Python Project</title>
+     <style>
 
     .navbar{
       list-style: none;
@@ -40,13 +40,15 @@
       display: block;
     }
 
-        </style>
+    </style>
     </head>
 
-    <body>
-
-    <ul class="navbar">
-      <li><a href="index.html"><div>Home</div></a></il>
+    <body>  
+        <script>
+            var ptext1 = document.getElementById('ptext1');
+        </script>
+     <ul class="navbar">
+      <li><a href="index.html"><div>Home</div></a></li>
       <li><a href="resume.html"><div>Resume</div></a></li>
       <li><a href="about me.html"><div>About Me</div></a></li>
       <li class = "dropdown">
@@ -59,9 +61,43 @@
       </li>
     </ul>
 
-    <style>
-    
-    </style>
+     <style>
+            #container{
+                position: absolute;
+                top: 78px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                background-color: black;
+            }
+            #leftpane{
+                width: 56%;
+                height: 100%;
+                float: left;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #rightpane{
+                width: 44%;
+                height: 100%;
+                float: left;
+            }
+            #storytext{
+                position: absolute;
+                bottom: 70px;
+                top: 0px;
+                left: 56%;
+                right: 0px;
+                justify-content: center;
+                padding: 8px;
+            }
+            #ptext1{
+                color: red;
+            }
+        }
+     </style>
 
     </body>
+
 </html>
