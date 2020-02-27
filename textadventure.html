@@ -1,0 +1,575 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+        <title>Texr Adventure</title>
+  <style>
+     #container{
+        position: absolute;
+        top: 78px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: black;
+     }
+    #leftpane{
+        width: 56%;
+        height: 100%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #rightpane{
+        width: 44%;
+        height: 100%;
+        float: left;
+    }
+    #storytext{
+        position: absolute;
+        bottom: 70px;
+        top: 0px;
+        left: 56%;
+        right: 0px;
+        justify-content: center;
+        padding: 8px;
+    }
+    #choices{
+        position: absolute;
+        bottom: 0px;
+        left: 56%;
+        right: 0px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #b1, #b2, #b3, #b4{
+        display: inline-block;
+        background-color: purple;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin: 8px;
+    }
+    #ptext1{
+        color: red;
+    }
+    #storyimg{
+        max-height: 97%;
+        max-width: 97%;
+        width: 97%;
+    }
+ </style>
+    </head>
+
+<body>
+    <div id='container'>
+    <div id='leftpane'>
+    <img id='storyimg' scr="images/">
+    </div>
+
+    <div id='rightpane'>
+        <div id='storytext'>
+            <p id='ptext1'>kghufytjgfjt</p>
+            <p id='ptext2'>erw</p>
+            <p id='ptext3'>453</p>
+            <p id='ptext4'>jhgf</p>
+        </div>
+        <div id='choices'>
+            <a id='b1' onclick= "bclick(1)" href="#">Choice 1</a>
+            <a id='b2' onclick= "bclick(2)" href="#">Choice 2</a>
+            <a id='b3' onclick= "bclick(3)" href="#">Choice 3</a>
+            <a id='b4' onclick= "bclick(4)" href="#">Choice 4</a>
+        </div>
+    </div>
+
+  </div>
+
+<script>
+    var pic = document.getElementById('storyimg');
+    var ptext1 = document.getElementById('ptext1');
+    var ptext2 = document.getElementById('ptext2');
+    var ptext3 = document.getElementById('ptext3');
+    var ptext4 = document.getElementById('ptext4');
+    var b1 = document.getElementById('b1');
+    var b2 = document.getElementById('b2');
+    var b3 = document.getElementById('b3');
+    var b4 = document.getElementById('b4');
+    var state = "intro";
+    intro();
+
+    function intro(){
+        pic.src = "images/public-hospital-australia.jpg";
+        ptext1.innerHTML = "You wake up in a hospital bed not knowing who you are or what has happened to you.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "look around";
+        b2.innerHTML = "go back to sleep";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function gobacktosleep(){
+        pic.src = "images/tre";
+        ptext1.innerHTML = "You fall back to sleep and recieve the ultimate rath of lucifer himself.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "retry";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function lookaround(){
+        pic.src = "images/ew";
+        ptext1.innerHTML = "The room is darkly lit with beds, many monitors, and a fant beebing sound in the background.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "peer out the window";
+        b2.innerHTML = "look over shoulder";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function peeroutthewindow(){
+        pic.src = "images/ty";
+        ptext1.innerHTML = "You open the curtains to look out and see that you are 15 stories up and the city is desserded, cars are crashed, and nobody in sight.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "look over shoulder";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    } 
+    function lookovershoulder(){
+        pic.src = "images/gh";
+        ptext1.innerHTML = "You look over your shoulder to find a desk with a document on top. You pick it up and read patient # 426 project L.R.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "exit the room";
+        b2.innerHTML = "flip through the papers";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function exittheroom(){
+        pic.src = "images/o";
+        ptext1.innerHTML = "You make your way to the door and peer out into the hallway. There's a broken light in the distance flickering on and off. You are slowly walking when you hear a loud metal clash, it's origin seems too close for comfort.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "turn around";
+        b2.innerHTML = "keep walking";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function flipthroughthepapers(){
+        pic.src = "images/z";
+        ptext1.innerHTML = "You quickly flip through the papers and the last page reads. Cure unsuccessful, patient has fallen into a coma. You then think to your self cure for what?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "exit the room";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function turnaround(){
+        pic.src = "images/l";
+        ptext1.innerHTML = "You turn around towerd the other end of the corridor, but nothing is there, just open rooms and dust. By the looks of things it is safe to say that this hospital hasn't been in use for a long time. You resume walking and instantly stop dead ih your tracks, a goopy black creature is directly in front of you the creature resembles the shapeof a human and seems to be made out of a liquid like substance.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "talk to the creature";
+        b2.innerHTML = "scream";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function keepwalking(){
+        pic.src = "images/f";
+        ptext1.innerHTML = "You keep walking but this time with more speed and weariness. You almost at the lobby, you can see an elevater. You start to run but a hand grabs your shoulder and locks you in place. It feels as though it's made of liquid. You freeze with fear.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "dash for the elevater";
+        b2.innerHTML = "kindly ask the person to let go"
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function talktocreature(){
+        pic.src = "images/fa";
+        ptext1.innerHTML = "You say hi and it replies with a grugle.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "ask for it's name";
+        b2.innerHTML = "ask it about the hospital";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function scream(){
+        pic.src = "images/faa";
+        ptext1.innerHTML = "The creature strangles you to death.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "retry";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function askitsname(){
+        pic.src = "images/fas";
+        ptext1.innerHTML = "Its mouth opens, but only a crocking sound can be heard.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "resume walking";
+        b2.innerHTML = "keep talkimg with the creature"
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function askabouthospitale(){
+        pic.src = "images/fafd";
+        ptext1.innerHTML = "It tilts its head, as if puzzled.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "resume walking";
+        b2.innerHTML = "keep talking with the creature";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function resumewalking(){
+        pic.src = "images/facv";
+        ptext1.innerHTML = "You turn back around and continue walking. You can hear the creature following you. You make your way out of the hospital and begin your new life in the apocolypse. You don't know who you where, but it doesn't matter, you can do anything.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "play again";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function keeptalking(){
+        pic.src = "images/faytu";
+        ptext1.innerHTML = "You continue talking to the creature and develop a friendship. You can't understand the creature though, but you enjoy talking ti it. You exit the hospital and begin your life in the apocolypse with your new found friend.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "play again";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function dashforelevater(){
+        pic.src = "images/sdf";
+        ptext1.innerHTML = "You try to dash for the elevater, bt it is no use. You feel a sharp pain in your back. You look down and see that a knife had impaled you you slowly bleed to death and die.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "retry";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function kindlyask(){
+        pic.src = "images/sdffd";
+        ptext1.innerHTML = "You feel the hand let go.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "keep walking toward the elevater";
+        b2.innerHTML = "turn around and thank the person";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function walktoelevater(){
+        pic.src = "images/sewrdf";
+        ptext1.innerHTML = "You get in the elevater. You press for the 1st floor, your whole body drops. It feels like your going 100 miles a minute. The elevater hits the floor and your body is crushed instantly and you die.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "retry";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+    function turnandtalk(){
+        pic.src = "images/svcbdf";
+        ptext1.innerHTML = "You turn around, but nothings there. You shrug and get into the elevater. You exit the hospital and step out onto the road, where you are instantly hit by a bus. You die.";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "retry";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    //state machine
+    function bclick(button){
+        if(state == "intro"){
+            if(button == 1){
+                lookaround();
+                state = "lookaround";
+            }
+            else if(button == 2){
+                //Send them somewhere else
+                gobacktosleep();
+                state = "gobacktosleep";
+            }
+        }
+
+        else if(state == "gobacktosleep"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state == "lookaround"){
+            if(button == 1){
+                peeroutthewindow();
+                state = "peeroutthewindow";
+            }
+            else if(button == 2){
+                lookovershoulder();
+                state = "lookovershoulder";
+            }
+        }
+
+        else if (state == "peeroutthewindow"){
+            if(button == 1){
+                lookovershoulder();
+                state = "lookovershoulder";
+            }
+        }
+
+        else if(state == "lookovershoulder"){
+            if(button == 1){
+                exittheroom();
+                state = "exittheroom";
+            }
+            else if(button == 2){
+                flipthroughthepapers();
+                state = "flipthroughthepapers";
+            }
+        }
+
+        else if(state == "flipthroughthepapers"){
+            if(button == 1){
+                exittheroom();
+                state = "exittheroom";
+            }
+        }
+
+        else if(state == "exittheroom"){
+            if(button == 1){
+                turnaround();
+                state = "turnaround";
+            }
+            else if(button == 2){
+                keepwalking();
+                state = "keepwalking";
+            }
+        }
+
+        else if(state == "turnaround"){
+            if(button == 1){
+                talktocreature();
+                state = "talktocreature";
+            }
+            else if(button == 2){
+                scream();
+                state = "scream";
+            }
+        }
+
+        else if(state == "scream"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state == "talktocreature"){
+            if(button == 1){
+                askitsname();
+                state = "askitsname";
+            }
+            else if(button == 2){
+                askabouthospitale();
+                state = "askabouthospitale";
+            }
+        }
+
+        else if(state == "askitsname"){
+            if(button == 1){
+                resumewalking();
+                state = "resumewalking";
+            }
+            else if(button == 2);{
+                keeptalking();
+                state = "keeptalking";
+            }
+        }
+
+        else if(state == "askabouthospitale"){
+            if(button == 1){
+                resumewalking();
+                state = "resumwalking";
+            }
+            else if(button == 2){
+                keeptalking();
+                state == "keeptalking";
+            }
+        }
+
+        else if(state == "resumewalking"){
+            if(button == 1){
+            intro();
+            state = "intro";
+            }
+        }
+
+        else if(state == "keeptalking"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+
+        }
+
+        else if(state == "keepwalking"){
+            if(button == 1){
+                dashforelevater();
+                state = "dashforelevater";
+            }
+            else if(button == 2){
+                kindlyask();
+                state = "kindlyask";
+            }
+        }
+
+        else if(state == "dashforelevater"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state == "kindlyask"){
+            if(button == 1){
+                walktoelevater();
+                state = "walktoelevater";
+            }
+            else if(button == 2){
+                turnandtalk();
+                state = "turnandtalk";
+            }
+        }
+
+        else if(state == "walktoelevater"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state == "turnandtalk"){
+            if(button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+        return false;
+    }
+</script>
+ <style>
+
+    .navbar{
+      list-style: none;
+      background-color: black;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .navbar a, .dropdown div{
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      padding: 16px;
+      display: inline-block;
+    }
+    .navbar li{
+      float: left;
+    }
+
+    .navbar li:hover{
+      background-color: red;
+    }
+
+    .dropdown-content{
+      list-style: none;
+      padding: 0;
+      display: none;
+    }
+
+    .dropdown-content li{
+      float:none;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display: block;
+    }
+
+ </style>
+
+    <ul class="navbar">
+      <li><a href="index.html"><div>Home</div></a></il>
+      <li><a href="resume.html"><div>Resume</div></a></li>
+      <li><a href="about me.html"><div>About Me</div></a></li>
+      <li class = "dropdown">
+        <div>Projects</div>
+        <ul class="dropdown-content">
+          <li><a href="textadventure.html">Text Adventure</a></li>
+          <li><a href="python.html">Python Project</a></li>
+          <li><a href="project3.html">Project 3</a></li>
+        </ul>
+      </li>
+    </ul>
+</body>
+</html>
